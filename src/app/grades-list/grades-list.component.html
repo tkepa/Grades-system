@@ -1,0 +1,40 @@
+<!-- <div>
+    <label for="percentFrom">Percent from</label>
+    <input id="percentFrom" [(ngModel)]="grade.percentsFrom" placeholder="0">
+    <label for="percentTo">Percent to</label>
+    <input id="percentTo" [(ngModel)]="grade.percentsTo" placeholder="0">
+    <label for="gradeType">Grade </label>
+    <input id="gradeType" [(ngModel)]="grade.gradeType" placeholder="grade">
+    <label for="gradeDescription">Grade description </label>
+    <input id="gradeDescription" [(ngModel)]="grade.description" placeholder="description">
+<div>{{grade.minPercents}}% - {{grade.maxPercents}}%</div>
+    <div>{{grade.minPercents}}% - {{grade.maxPercents}}%</div>
+</div> -->
+
+<h2>Grades</h2>
+<ul class="grades">
+    <li class="grades__element" *ngFor="let grade of grades" (click)="onSelect(grade)">
+        <div>{{grade.gradeType}}</div>
+        <div>{{grade.percentsFrom}}% - {{grade.percentsTo}}%</div>
+    </li>
+</ul>
+<div *ngIf="selectedGrade">
+    <label for="percentFrom">Percent from</label>
+    <input id="percentFrom" [(ngModel)]="selectedGrade.percentsFrom" placeholder="0">
+    <label for="percentTo">Percent to</label>
+    <input id="percentTo" [(ngModel)]="selectedGrade.percentsTo" placeholder="0">
+    <label for="gradeType">Grade </label>
+    <input id="gradeType" [(ngModel)]="selectedGrade.gradeType" placeholder="grade">
+    <label for="gradeDescription">Grade description </label>
+    <input id="gradeDescription" [(ngModel)]="selectedGrade.description" placeholder="description">
+</div>
+<!-- <mat-list>
+    <mat-list-item *ngFor="let grade of grades">
+      <h3 matLine> {{grade.gradeType}} </h3>
+      <p matLine> {{grade.percentsFrom}}} </p>
+      <p matLine class="demo-2"> {{grade.percentsTo}} </p>
+    </mat-list-item>
+</mat-list>
+   -->
+   
+  
