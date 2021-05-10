@@ -43,5 +43,17 @@
          &:hover {
             background-color: bisque;
          }
+
+         &--selected {
+            width: 276px;
+            height: 36px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            border: 2px solid rgb(110, 143, 110);
+            border-radius: 10px;
+         }
      }
  }
