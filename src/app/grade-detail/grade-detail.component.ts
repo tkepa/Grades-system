@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Grade } from '../grade';
+import { GradesService } from '../grades.service'
 
 @Component({
   selector: 'app-grade-detail',
@@ -10,9 +11,18 @@ export class GradeDetailComponent implements OnInit {
 
   @Input() grade?: Grade;
 
-  constructor() { }
+  constructor(
+    private gradesService: GradesService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onKey(): void {
+    this.gradesService.updateGrade(this.grade);
+  } 
+
+  update():void {
+    
+  }
 }

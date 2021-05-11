@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Grade } from '../grade';
-import { GRADES } from '../mock-grades'
+//import { GRADES } from '../mock-grades'
 import { GradesService } from '../grades.service';
 
 
