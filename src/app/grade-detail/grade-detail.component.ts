@@ -19,7 +19,7 @@ export class GradeDetailComponent implements OnInit {
   }
 
   onKey(): void {
-    this.gradesService.updateGrade(this.grade);
+    this.gradesService.updateGrade(this.grade).subscribe();
   } 
 
   update():void {

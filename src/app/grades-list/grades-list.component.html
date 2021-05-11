@@ -16,10 +16,11 @@
     <li [class.grades__element]="grade !== selectedGrade" [class.grades__element--selected]="grade === selectedGrade" *ngFor="let grade of grades" (click)="onSelect(grade)">
         <div>{{grade.symbolicGrade}}</div>
         <div>{{grade.minPercentage}}% - {{grade.maxPercentage}}%</div>
+        <button class="delete" title="delete grade" (click)="deleteGrade(grade)">X</button>
     </li>
 </ul>
 <div>
-    <button class="add-button" (click)="add()">
+    <button class="add-button" (click)="addGrade()">
         Add New Grade
     </button>
 </div>

@@ -32,14 +32,23 @@ export class GradesService {
     return this.http.put(this.gradesUrl, grade, this.httpOptions).pipe(
       tap(_ => console.log('updated grade properties')),
       catchError(this.handleError<any>('updateGrade'))
-    )
+    );
   }
 
   addGrade(grade: Grade): Observable<Grade> {
     return this.http.post<Grade>(this.gradesUrl, grade, this.httpOptions).pipe(
       tap((newGrade: Grade) => console.log(`added grade w/ id ${newGrade.id}`)),
       catchError(this.handleError<Grade>('addGrade'))
-    )
+    );
+  }
+
+  deleteGrade(id: string): Observable<Grade> {
+    const url = `${this.gradesUrl}/${id}`
+
+    return this.http.delete<Grade>(url, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted grade id=${id}`)),
+      catchError(this.handleError<Grade>('deleteHero'))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

@@ -38,10 +38,16 @@ export class GradesListComponent implements OnInit {
     this.gradesService.getGrades().subscribe(grades => this.grades = grades);
   }
 
-  add(): void { 
+  addGrade(): void { 
     this.newGrade.id = `ungr-${uuidv4()}`
     this.gradesService.addGrade(this.newGrade as Grade).subscribe(grade => {
       this.grades.push(grade)
     })
   }
+
+  deleteGrade(grade: Grade): void {
+    this.grades = this.grades.filter(g => g !== grade);
+    this.gradesService.deleteGrade(grade.id).subscribe();
+  }
+
 }
