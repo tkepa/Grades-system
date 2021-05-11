@@ -18,7 +18,11 @@
         <div>{{grade.minPercentage}}% - {{grade.maxPercentage}}%</div>
     </li>
 </ul>
-
+<div>
+    <button class="add-button" (click)="add()">
+        Add New Grade
+    </button>
+</div>
 <app-grade-detail [grade]="selectedGrade"></app-grade-detail>
 
 

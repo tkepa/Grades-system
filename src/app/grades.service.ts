@@ -35,6 +35,13 @@ export class GradesService {
     )
   }
 
+  addGrade(grade: Grade): Observable<Grade> {
+    return this.http.post<Grade>(this.gradesUrl, grade, this.httpOptions).pipe(
+      tap((newGrade: Grade) => console.log(`added grade w/ id ${newGrade.id}`)),
+      catchError(this.handleError<Grade>('addGrade'))
+    )
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
