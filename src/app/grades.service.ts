@@ -51,6 +51,15 @@ export class GradesService {
     );
   }
 
+  getGrade(id: string): Observable<Grade> {
+    const url = `${this.gradesUrl}/${id}`;
+
+    return this.http.get<Grade>(url).pipe(
+      tap(_ => console.log(`fetched grade id=${id}`)),
+      catchError(this.handleError<Grade>(`getGrade id=${id}`))
+    )
+  }
+  
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
