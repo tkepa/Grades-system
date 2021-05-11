@@ -1,6 +1,7 @@
 export interface Grade {
-    gradeType: string;
-    description: string;
-    percentsFrom: number;
-    percentsTo: number;
+    descriptiveGrade: string;
+    id: string;
+    minPercentage: number;
+    maxPercentage: number;
+    symbolicGrade: string;
 }

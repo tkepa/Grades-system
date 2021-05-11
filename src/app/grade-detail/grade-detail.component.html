@@ -1,0 +1,10 @@
+<div *ngIf="grade">
+    <label for="percentFrom">Percent from</label>
+    <input type="number" min="0" max="100" id="percentFrom"  [(ngModel)]="grade.minPercentage" placeholder="0" pattern ="^0?[0-9]?[0-9]$|^(100)$">
+    <label for="percentTo">Percent to</label>
+    <input id="percentTo"  min="0" max="100"  [(ngModel)]="grade.maxPercentage" placeholder="0">
+    <label for="gradeType">Grade </label>
+    <input id="gradeType" type="number" min="0" max="100"  [(ngModel)]="grade.symbolicGrade" placeholder="grade">
+    <label for="gradeDescription">Grade description </label>
+    <input id="gradeDescription" type="number" min="0" max="100" [(ngModel)]="grade.descriptiveGrade" placeholder="description">
+</div>
