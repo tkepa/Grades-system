@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { GradesListComponent } from './grades-list/grades-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GradeDetailComponent } from './grade-detail/grade-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MainPanelPageComponent } from './main-panel-page/main-panel-page.component';
+import { PanelNavComponent } from './panel-nav/panel-nav.component';
 
 
 
@@ -19,6 +22,8 @@ import { GradeDetailComponent } from './grade-detail/grade-detail.component';
     AppComponent,
     GradesListComponent,
     GradeDetailComponent,
+    MainPanelPageComponent,
+    PanelNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { GradeDetailComponent } from './grade-detail/grade-detail.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

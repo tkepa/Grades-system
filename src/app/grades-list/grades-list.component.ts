@@ -14,7 +14,7 @@ export class GradesListComponent implements OnInit {
 
   selectedGrade?: Grade;
   grades: Grade[] = [];
-
+  title = 'Grades List';
 
   constructor(private gradesService: GradesService) { }
 

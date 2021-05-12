@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MainPanelPageComponent } from './main-panel-page/main-panel-page.component'
 
 @Component({
   selector: 'app-root',
