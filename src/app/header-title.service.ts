@@ -6,10 +6,13 @@ import { BehaviorSubject } from 'rxjs-compat/BehaviorSubject';
 })
 export class HeaderTitleService {
   public title = new BehaviorSubject('Title')
-
+  public buttonCondition = new BehaviorSubject('ButtonBack')
   constructor() { }
 
   setTitle(title) {
     this.title.next(title);
+  }
+  setButtonBack(backButton) {
+    this.buttonCondition.next(backButton);
   }
 }

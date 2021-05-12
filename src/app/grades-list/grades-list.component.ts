@@ -15,13 +15,14 @@ export class GradesListComponent implements OnInit {
 
   selectedGrade?: Grade;
   grades: Grade[] = [];
-  title = 'Grades List';
+
 
   constructor(private gradesService: GradesService, private headerTitleService: HeaderTitleService) { }
 
   ngOnInit(): void {
     this.getGrades();
     this.headerTitleService.setTitle('Grades System')
+    this.headerTitleService.setButtonBack(true)
   }
 
 

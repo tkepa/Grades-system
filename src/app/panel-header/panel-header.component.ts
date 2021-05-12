@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common'
+
 import { HeaderTitleService } from '../header-title.service';
+
 
 @Component({
   selector: 'app-panel-header',
@@ -9,8 +12,12 @@ import { HeaderTitleService } from '../header-title.service';
 export class PanelHeaderComponent implements OnInit {
 
   title:string = '';
+  buttonCondition: string;
 
-  constructor(private headerTitleService: HeaderTitleService) {
+  constructor(
+    private headerTitleService: HeaderTitleService,
+    private location: Location
+    ) {
 
   }
   
@@ -18,6 +25,13 @@ export class PanelHeaderComponent implements OnInit {
     this.headerTitleService.title.subscribe(title => {
       this.title = title;
     })
+    this.headerTitleService.buttonCondition.subscribe(buttonCondition => {
+      this.buttonCondition = buttonCondition;
+    })
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

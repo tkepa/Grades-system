@@ -13,6 +13,7 @@ export class MainPanelPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.headerTitleService.setTitle('Main Panel Page')
+    this.headerTitleService.setButtonBack(false)
   }
 
 }
