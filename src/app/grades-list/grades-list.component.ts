@@ -32,7 +32,7 @@ export class GradesListComponent implements OnInit {
 
 
   getGrades(): void {
-    this.gradesService.getGrades().subscribe(grades => this.grades = grades);
+    this.gradesService.getGrades().subscribe(grades => this.grades = grades.sort((a,b) => (a.minPercentage-b.minPercentage) || (a.maxPercentage-b.maxPercentage) ));
   }
 
   addGrade(): void { 
