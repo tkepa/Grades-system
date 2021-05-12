@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Grade } from '../grade';
 //import { GRADES } from '../mock-grades'
 import { GradesService } from '../grades.service';
+import { HeaderTitleService } from '../header-title.service';
 
 
 @Component({
@@ -16,10 +17,11 @@ export class GradesListComponent implements OnInit {
   grades: Grade[] = [];
   title = 'Grades List';
 
-  constructor(private gradesService: GradesService) { }
+  constructor(private gradesService: GradesService, private headerTitleService: HeaderTitleService) { }
 
   ngOnInit(): void {
     this.getGrades();
+    this.headerTitleService.setTitle('Grades System')
   }
 
 

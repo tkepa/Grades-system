@@ -5,7 +5,7 @@ import { MainPanelPageComponent } from './main-panel-page/main-panel-page.compon
 
 const routes: Routes = [
   { path: '', redirectTo: 'mainPanel', pathMatch: 'full'},
-  { path: 'mainPanel', component: MainPanelPageComponent },
+  { path: 'mainPanel', component: MainPanelPageComponent, data: { title: 'Grades System'} },
   { path: 'grades-system', component: GradesListComponent }
 ];
 

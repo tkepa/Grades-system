@@ -14,6 +14,7 @@ import { GradeDetailComponent } from './grade-detail/grade-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainPanelPageComponent } from './main-panel-page/main-panel-page.component';
 import { PanelNavComponent } from './panel-nav/panel-nav.component';
+import { PanelHeaderComponent } from './panel-header/panel-header.component';
 
 
 
@@ -24,6 +25,7 @@ import { PanelNavComponent } from './panel-nav/panel-nav.component';
     GradeDetailComponent,
     MainPanelPageComponent,
     PanelNavComponent,
+    PanelHeaderComponent,
   ],
   imports: [
     BrowserModule,

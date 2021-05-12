@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderTitleService } from '../header-title.service';
+
 
 @Component({
   selector: 'app-main-panel-page',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPanelPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private headerTitleService: HeaderTitleService) { }
 
   ngOnInit(): void {
+    this.headerTitleService.setTitle('Main Panel Page')
   }
 
 }

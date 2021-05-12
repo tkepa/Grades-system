@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelNavComponent implements OnInit {
 
-  constructor() { }
+  title = null;
+
+  constructor() {
+  
+   }
 
   ngOnInit(): void {
+
   }
 
 }
