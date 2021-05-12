@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Observable, of } from 'rxjs'
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, debounce, debounceTime, distinct, distinctUntilChanged, map, tap } from 'rxjs/operators';
 
 import { Grade } from './grade'
 
@@ -30,6 +30,8 @@ export class GradesService {
   
   updateGrade(grade: Grade): Observable<any> {
     return this.http.put(this.gradesUrl, grade, this.httpOptions).pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
       tap(_ => console.log('updated grade properties')),
       catchError(this.handleError<any>('updateGrade'))
     );

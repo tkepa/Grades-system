@@ -14,13 +14,7 @@ export class GradesListComponent implements OnInit {
 
   selectedGrade?: Grade;
   grades: Grade[] = [];
-  newGrade: Grade = {
-    id: '', 
-    symbolicGrade: '', 
-    descriptiveGrade: '', 
-    minPercentage: 0, 
-    maxPercentage: 0
-  }
+
 
   constructor(private gradesService: GradesService) { }
 
@@ -39,8 +33,15 @@ export class GradesListComponent implements OnInit {
   }
 
   addGrade(): void { 
-    this.newGrade.id = `ungr-${uuidv4()}`
-    this.gradesService.addGrade(this.newGrade as Grade).subscribe(grade => {
+    const newGrade: Grade = {
+      id: `ungr-${uuidv4()}`, 
+      symbolicGrade: '', 
+      descriptiveGrade: '', 
+      minPercentage: 0, 
+      maxPercentage: 0
+    };
+ 
+    this.gradesService.addGrade(newGrade as Grade).subscribe(grade => {
       this.grades.push(grade)
     })
   }
