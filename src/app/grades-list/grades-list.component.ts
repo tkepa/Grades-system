@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 import { Grade } from '../grade';
-//import { GRADES } from '../mock-grades'
+// import { GRADES } from '../mock-grades'
 import { GradesService } from '../grades.service';
 import { HeaderTitleService } from '../header-title.service';
-
 
 @Component({
   selector: 'app-grades-list',
@@ -12,46 +11,53 @@ import { HeaderTitleService } from '../header-title.service';
   styleUrls: ['./grades-list.component.scss']
 })
 export class GradesListComponent implements OnInit {
-
   selectedGrade?: Grade;
   grades: Grade[] = [];
 
-
-  constructor(private gradesService: GradesService, private headerTitleService: HeaderTitleService) { }
+  constructor(
+    private gradesService: GradesService,
+    private headerTitleService: HeaderTitleService
+  ) {}
 
   ngOnInit(): void {
     this.getGrades();
-    this.headerTitleService.setTitle('Grades System')
-    this.headerTitleService.setButtonBack(true)
+    this.headerTitleService.setTitle('Grades System');
+    this.headerTitleService.setButtonBack(true);
   }
-
 
   onSelect(grade: Grade): void {
     this.selectedGrade = grade;
   }
 
-
   getGrades(): void {
-    this.gradesService.getGrades().subscribe(grades => this.grades = grades.sort((a,b) => (a.minPercentage-b.minPercentage) || (a.maxPercentage-b.maxPercentage) ));
+    this.gradesService
+      .getGrades()
+      .subscribe(
+        (grades) =>
+          (this.grades = grades.sort(
+            (a, b) =>
+              a.minPercentage - b.minPercentage ||
+              a.maxPercentage - b.maxPercentage
+          ))
+      );
   }
 
-  addGrade(): void { 
+  addGrade(): void {
     const newGrade: Grade = {
-      id: `ungr-${uuidv4()}`, 
-      symbolicGrade: '', 
-      descriptiveGrade: '', 
-      minPercentage: 0, 
+      id: `ungr-${uuidv4()}`,
+      symbolicGrade: '',
+      descriptiveGrade: '',
+      minPercentage: 0,
       maxPercentage: 0
     };
- 
-    this.gradesService.addGrade(newGrade as Grade).subscribe(grade => {
-      this.grades.push(grade)
-    })
+
+    this.gradesService.addGrade(newGrade as Grade).subscribe((grade) => {
+      this.grades.push(grade);
+    });
   }
 
   deleteGrade(grade: Grade): void {
-    this.grades = this.grades.filter(g => g !== grade);
+    this.grades = this.grades.filter((g) => g !== grade);
     this.gradesService.deleteGrade(grade.id).subscribe();
   }
-
 }

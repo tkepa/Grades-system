@@ -6,15 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panel-nav.component.scss']
 })
 export class PanelNavComponent implements OnInit {
-
   title = null;
 
-  constructor() {
-  
-   }
+  constructor() {}
 
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }
