@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelNavComponent implements OnInit {
   title = null;
+  switcher: Boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSwitch() {
+    this.switcher = !this.switcher;
+  }
 }

@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root'
 })
 export class InMemoryDataService implements InMemoryDbService {
-  createDb(): Grade[] {
+  createDb() {
     const grades = [
       {
         id: `ungr- + ${uuidv4()}`,

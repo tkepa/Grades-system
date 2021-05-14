@@ -1,12 +1,53 @@
-<div *ngIf="grade">
-    <label for="percentFrom">Percent from</label>
-    <input type="number" min="0" max="100" id="percentFrom"  [(ngModel)]="grade.minPercentage" (keyup)="onKey()" placeholder="0" pattern ="^0?[0-9]?[0-9]$|^(100)$">
-    <label for="percentTo">Percent to</label>
-    <input id="percentTo"  min="0" max="100"  [(ngModel)]="grade.maxPercentage" placeholder="0">
-    <label for="gradeType">Grade </label>
-    <input id="gradeType" type="string" min="0" max="100"  [(ngModel)]="grade.symbolicGrade" placeholder="grade">
-    <label for="gradeDescription">Grade description </label>
-    <input id="gradeDescription" type="string" min="0" max="100" [(ngModel)]="grade.descriptiveGrade" placeholder="description">
-
-    
+<div class="details__container" *ngIf="grade">
+  <div class="field__container">
+    <label class="details__label" for="percentFrom">Percent from</label>
+    <input
+      class="details__input"
+      type="number"
+      min="0"
+      max="100"
+      id="percentFrom"
+      [(ngModel)]="grade.minPercentage"
+      (keyup)="onKey()"
+      placeholder="0"
+      pattern="^0?[0-9]?[0-9]$|^(100)$"
+    />
+  </div>
+  <div class="field__container">
+    <label class="details__label" for="percentTo">Percent to</label>
+    <input
+      class="details__input"
+      id="percentTo"
+      min="0"
+      max="100"
+      [(ngModel)]="grade.maxPercentage"
+      placeholder="0"
+    />
+  </div>
+  <div class="field__container">
+    <label class="details__label" for="gradeType">Grade </label>
+    <input
+      class="details__input"
+      id="gradeType"
+      type="string"
+      min="0"
+      max="100"
+      [(ngModel)]="grade.symbolicGrade"
+      placeholder="grade"
+    />
+  </div>
+  <div class="field__container">
+    <label class="details__label" for="gradeDescription"
+      >Grade description
+    </label>
+    <input
+      class="details__input"
+      id="gradeDescription"
+      type="string"
+      min="0"
+      max="100"
+      [(ngModel)]="grade.descriptiveGrade"
+      placeholder="description"
+    />
+  </div>
 </div>

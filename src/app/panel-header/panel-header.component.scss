@@ -1,0 +1,44 @@
+$green: #5e8837;
+
+.header {
+  grid-area: header;
+  width: 100vw;
+  height: 3.125rem;
+  background-color: white;
+  filter: drop-shadow(0.5rem -0.5rem 0.5rem rgb(0, 0, 0));
+
+  &__container {
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    height: 3.125rem;
+  }
+
+  &__item {
+    margin: 1rem;
+
+    &--button {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      border: 2px solid $green;
+      border-radius: 100%;
+      background-color: white;
+
+      &:hover {
+        background-color: $green;
+      }
+    }
+
+    &--header {
+        color: $green;
+    }
+  }
+}
+
+.mat-icon:hover {
+  color: white;
+}

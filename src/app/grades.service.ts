@@ -65,7 +65,7 @@ export class GradesService {
     );
   }
 
-  private handleError<T>(operation = 'operation', result?: T): T {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
 

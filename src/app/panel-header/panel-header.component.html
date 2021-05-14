@@ -1,2 +1,13 @@
-<button *ngIf="buttonCondition" (click)="goBack()"><</button>
-<h2>{{title}}</h2>
+<header class="header">
+  <div class="header__container">
+    <button
+      class="header__item header__item--button"
+      [ngStyle]="{ color: '#5e8837' }"
+      *ngIf="buttonCondition"
+      (click)="goBack()"
+    >
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <h2 class="header__item header__item--header">{{ title }}</h2>
+  </div>
+</header>

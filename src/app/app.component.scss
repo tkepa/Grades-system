@@ -1,24 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
-  }
-  h2, h3 {
-    color: #444;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  body {
-    margin: 2em;
-    display: flex;
-    align-items: center;
-  }
-  body, input[type="text"], button {
-    color: #333;
-    font-family: Cambria, Georgia, serif;
-    
-  }
-  /* everywhere else */
-  * {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  color: #369;
+  font-family: 'Roboto', sans-serif;
+  font-size: 250%;
+}
+h2,
+h3 {
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+  display: flex;
+  align-items: center;
+}
+body,
+input[type='text'],
+button {
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+}
+/* everywhere else */
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* .container {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: 60px auto;
+  grid-template-areas:
+    'nav header'
+    'cont cont';
+} */
+.navigation__container {
+  height: 100vh;
+}
+
+

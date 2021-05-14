@@ -20,40 +20,110 @@
     }
 }
  */
+$green: #5e8837;
 
- .grades {
-     height: 500px;
-     width: 300px;
-     list-style: none;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     align-items: center;
-     background-color: antiquewhite;
-     padding: 20px 20px 20px 20px;
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-     &__element {
-         width: 280px;
-         height: 40px;
-         display: flex;
-         flex-direction: row;
-         justify-content: space-around;
-         align-items: center;
+.grades {
+  &__container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 1rem 0 0 0;
+  }
+  &__element {
+    width: 100vw;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-         &:hover {
-            background-color: bisque;
-         }
+    &--content {
+      flex-grow: 1;
+      width: 33%;
+      text-align: center;
+      line-height: 3rem;
+      display: flex;
+      justify-content: center;
+    }
 
-         &--selected {
-            width: 276px;
-            height: 36px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            background-color: rgb(255, 255, 255);
-            border: 2px solid rgb(110, 143, 110);
-            border-radius: 10px;
-         }
-     }
- }
+    &:hover {
+      background-color: rgb(218, 218, 218);
+    }
+
+    &--selected {
+      width: 98vw;
+      height: 3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+      border: 2px solid rgb(110, 143, 110);
+      border-radius: 10px;
+    }
+  }
+
+  &__button {
+    &--delete {
+      height: 90%;
+      width: 2rem;
+      border: none;
+      background-color: white;
+      border-radius: 0.3rem;
+      display: flex;
+
+      &:hover,
+      :active {
+        background-color: #5e8837;
+      }
+    }
+    &--container {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    &--add {
+      height: 2rem;
+      margin: 1rem;
+      background-color: #fff;
+      border-radius: 0.3rem;
+      border: 2px solid rgb(182, 182, 182);
+      padding: 0.4rem;
+
+      &:hover,
+      :active {
+        border-color: $green;
+        color: $green;
+      }
+    }
+  }
+  &__details {
+  }
+}
+
+.mat-icon {
+  width: 2rem;
+  color: #5e8837;
+  background-color: none;
+  &:hover,
+  :active {
+    color: #fff;
+  }
+}

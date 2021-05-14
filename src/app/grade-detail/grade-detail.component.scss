@@ -1,0 +1,31 @@
+.details {
+  &__container {
+    background-color: rgb(146, 187, 134);
+    width: 100vw;
+    height: 45vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__label {
+    font-size: 0.6rem;
+  }
+
+  &__input {
+    height: 2rem;
+    border: 2px solid rgb(202, 202, 202);
+    border-radius: 0.3rem;
+    padding-left: 0.6rem;
+  }
+}
+
+.field__container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0.5rem;
+}

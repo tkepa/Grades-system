@@ -1,4 +1,20 @@
-<nav class="navigation">
-    <a routerLink="/">Panel</a>
-    <a routerLink="/grades-system">Grading system</a>
-</nav>
+
+<div class="navigation__container">
+  <button
+    class="navigation__switcher"
+    [class.navigation__switcher--active]="switcher"
+    (click)="onSwitch()"
+  >
+    <mat-icon [ngStyle]="{ color: 'white' }">menu</mat-icon>
+  </button>
+  <nav class="navigation__list" [class.navigation__list--visible]="switcher">
+    <ul class="navigation__list--container">
+      <li class="navigation__item">
+        <a routerLink="/">Panel</a>
+      </li>
+      <li class="navigation__item">
+        <a routerLink="/grades-system">Grading system</a>
+      </li>
+    </ul>
+  </nav>
+</div>

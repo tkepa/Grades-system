@@ -1,39 +1,37 @@
-<!-- <div>
-    <label for="percentFrom">Percent from</label>
-    <input id="percentFrom" [(ngModel)]="grade.percentsFrom" placeholder="0">
-    <label for="percentTo">Percent to</label>
-    <input id="percentTo" [(ngModel)]="grade.percentsTo" placeholder="0">
-    <label for="gradeType">Grade </label>
-    <input id="gradeType" [(ngModel)]="grade.gradeType" placeholder="grade">
-    <label for="gradeDescription">Grade description </label>
-    <input id="gradeDescription" [(ngModel)]="grade.description" placeholder="description">
-<div>{{grade.minPercents}}% - {{grade.maxPercents}}%</div>
-    <div>{{grade.minPercents}}% - {{grade.maxPercents}}%</div>
-</div> -->
-
-<h2>Grades</h2>
-<ul class="grades">
-    <li [class.grades__element]="grade !== selectedGrade" [class.grades__element--selected]="grade === selectedGrade" *ngFor="let grade of grades" (click)="onSelect(grade)">
-        <div>{{grade.symbolicGrade}}</div>
-        <div>{{grade.minPercentage}}% - {{grade.maxPercentage}}%</div>
-        <button class="delete" title="delete grade" (click)="deleteGrade(grade)">X</button>
-    </li>
-</ul>
-<div>
-    <button class="add-button" (click)="addGrade()">
+<div class="container">
+  <div class="grades__container">
+    <ul class="grades__list">
+      <li
+        [class.grades__element]="grade !== selectedGrade"
+        [class.grades__element--selected]="grade === selectedGrade"
+        *ngFor="let grade of grades"
+        (click)="onSelect(grade)"
+      >
+        <div class="grades__element--content">{{ grade.symbolicGrade }}</div>
+        <div class="grades__element--content">
+          {{ grade.minPercentage }}% - {{ grade.maxPercentage }}%
+        </div>
+        <div class="grades__element--content">
+          <button
+            class="grades__button--delete"
+            title="delete grade"
+            (click)="deleteGrade(grade)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div class="grades__button--container">
+      <button class="grades__button--add" (click)="addGrade()">
         Add New Grade
-    </button>
+      </button>
+    </div>
+  </div>
+
+  <app-grade-detail
+    class="grades__details"
+    [grade]="selectedGrade"
+  ></app-grade-detail>
 </div>
-<app-grade-detail [grade]="selectedGrade"></app-grade-detail>
 
-
-<!-- <mat-list>
-    <mat-list-item *ngFor="let grade of grades">
-      <h3 matLine> {{grade.gradeType}} </h3>
-      <p matLine> {{grade.percentsFrom}}} </p>
-      <p matLine class="demo-2"> {{grade.percentsTo}} </p>
-    </mat-list-item>
-</mat-list>
-   -->
-   
-  
