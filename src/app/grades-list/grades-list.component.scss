@@ -1,30 +1,9 @@
-/* .mat-list {
-    width: 500px;
-    height: 400px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: rgb(169, 194, 169);
-}
-.mat-list-item {
-    width: 200px;
-    height: 30px;
-    display: list-item;
-
-
-    &:hover{
-        background-color: rgb(255, 255, 255);
-        border: 2px solid rgb(212, 212, 212);
-        border-radius: 20px;
-    }
-}
- */
 $green: #5e8837;
 
 .container {
-  height: 100vh;
-  width: 100vw;
+  grid-area: content;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,12 +11,14 @@ $green: #5e8837;
 
 .grades {
   &__container {
+    width: 90%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   &__list {
+    width: 90%;
     margin: 0;
     list-style: none;
     display: flex;
@@ -47,7 +28,7 @@ $green: #5e8837;
     padding: 1rem 0 0 0;
   }
   &__element {
-    width: 100vw;
+    width: 98%;
     height: 3rem;
     display: flex;
     flex-direction: row;
@@ -55,7 +36,7 @@ $green: #5e8837;
 
     &--content {
       flex-grow: 1;
-      width: 33%;
+      width: 90%;
       text-align: center;
       line-height: 3rem;
       display: flex;
@@ -67,7 +48,7 @@ $green: #5e8837;
     }
 
     &--selected {
-      width: 98vw;
+      width: 98%;
       height: 3rem;
       display: flex;
       flex-direction: row;
@@ -90,7 +71,7 @@ $green: #5e8837;
 
       &:hover,
       :active {
-        background-color: #5e8837;
+        background-color: rgb(238, 252, 206);
       }
     }
     &--container {
@@ -104,26 +85,28 @@ $green: #5e8837;
       margin: 1rem;
       background-color: #fff;
       border-radius: 0.3rem;
-      border: 2px solid rgb(182, 182, 182);
+      border: 2px solid $green;
       padding: 0.4rem;
 
       &:hover,
       :active {
-        border-color: $green;
         color: $green;
       }
     }
   }
-  &__details {
-  }
 }
 
 .mat-icon {
+  font-size: 1.5rem;
   width: 2rem;
+  height: 90%;
   color: #5e8837;
   background-color: none;
-  &:hover,
-  :active {
-    color: #fff;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    flex-direction: row;
+    align-items: none;
   }
 }

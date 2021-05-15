@@ -1,4 +1,3 @@
-
 <div class="navigation__container">
   <button
     class="navigation__switcher"
@@ -9,10 +8,10 @@
   </button>
   <nav class="navigation__list" [class.navigation__list--visible]="switcher">
     <ul class="navigation__list--container">
-      <li class="navigation__item">
+      <li class="navigation__item" (click)="mediaCondition || onSwitch()">
         <a routerLink="/">Panel</a>
       </li>
-      <li class="navigation__item">
+      <li class="navigation__item" (click)="mediaCondition || onSwitch()">
         <a routerLink="/grades-system">Grading system</a>
       </li>
     </ul>

@@ -9,7 +9,6 @@ a {
   :active {
     color: inherit;
   }
-
 }
 
 .navigation__container {
@@ -54,12 +53,8 @@ a {
     justify-content: center;
     align-items: center;
 
-    &:hover {
-      width: 9.75rem;
-      background-color: #1a3600;
-    }
-
-    &:active {
+    &:hover,
+    :active {
       width: 9.75rem;
       background-color: #1a3600;
     }
@@ -74,9 +69,49 @@ a {
     background-color: #1a3600;
     &:hover {
       background-color: #5e8837;
+      width: 9rem;
     }
     &--active {
       background-color: #5e8837;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  a {
+  margin-left: 0;
+  &:visited,
+  :active {
+    color: inherit;
+  }
+}
+  .navigation {
+    &__list {
+      margin: 0;
+      width: 10rem;
+      display: flex;
+      height: 100vh;
+      border-radius: 0;
+      padding: 0;
+      &--container {
+        padding: 0;
+      }
+    }
+    &__switcher {
+      display: none;
+    }
+    &--visible {
+    }
+
+    &__item {
+      padding-left: 5rem;
+      width: 10rem;
+      padding: 0;
+      &:hover,
+      :active {
+        width: 10rem;
+        background-color: #1a3600;
+      }
     }
   }
 }

@@ -8,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class PanelNavComponent implements OnInit {
   title = null;
   switcher: Boolean = false;
+  innerWidth: any;
+  mediaCondition: boolean;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
+    this.mediaCondition = this.innerWidth >= 800 ? true : false;
+  }
 
   onSwitch() {
     this.switcher = !this.switcher;

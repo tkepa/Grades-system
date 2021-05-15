@@ -1,0 +1,31 @@
+$green: #5e8837;
+
+.header {
+  &__container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: gray
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $green;
+  }
+  &__image{
+      height: 10rem;
+      width: 10rem;
+      filter: drop-shadow(0 6px 10px )
+  }
+}
+
+.paragraph {    
+    &__body {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+}
