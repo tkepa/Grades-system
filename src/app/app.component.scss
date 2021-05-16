@@ -27,22 +27,12 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
-/* .container {
-  display: grid;
-  grid-template-columns: 100px auto;
-  grid-template-rows: 60px auto;
-  grid-template-areas:
-    'nav header'
-    'cont cont';
-} */
-.navigation__container {
-  height: 100vh;
-}
-
 .container {
+  max-width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 3.125rem auto;
-  grid-template-rows: 3.125rem auto;
+  grid-template-columns: 3.125rem 1fr;
+  grid-template-rows: 3.125rem 1fr;
   grid-template-areas:
     'navigation header'
     'content content';
@@ -58,13 +48,17 @@ button {
 }
 .navigation {
   grid-area: navigation;
+
+  &__links {
+    display: block;
+    min-height: 100%;
+  }
 }
 
 @media screen and (min-width: 960px) {
   .container {
-    display: grid;
-    grid-template-columns: 10rem auto;
-    grid-template-rows: auto auto;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: 3.125rem 1fr;
     grid-template-areas:
       'navigation header'
       'navigation content';

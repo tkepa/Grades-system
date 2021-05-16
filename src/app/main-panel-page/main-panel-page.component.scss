@@ -3,8 +3,8 @@ $green: #5e8837;
 .header {
   &__container {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;

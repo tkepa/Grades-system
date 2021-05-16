@@ -1,12 +1,14 @@
 <header class="header">
   <div class="header__container">
-    <button *ngIf="buttonCondition"
-      class="header__item header__item--button"
-    >
-      <mat-icon class="icon" (click)="goBack()"
-        >chevron_left</mat-icon
+    <div class="header__container--button">
+      <button
+        [hidden]="!buttonCondition"
+        class="header__item header__item--button"
       >
-    </button>
+        <mat-icon class="icon" (click)="goBack()">chevron_left</mat-icon>
+      </button>
+    </div>
+
     <h2 class="header__item header__item--header">{{ title }}</h2>
   </div>
 </header>

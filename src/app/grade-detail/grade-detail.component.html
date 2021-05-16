@@ -18,10 +18,13 @@
     <input
       class="details__input"
       id="percentTo"
+      type="number"
       min="0"
       max="100"
       [(ngModel)]="grade.maxPercentage"
       placeholder="0"
+      (keyup)="onKey()"
+      pattern="^0?[0-9]?[0-9]$|^(100)$"
     />
   </div>
   <div class="field__container">
@@ -29,11 +32,10 @@
     <input
       class="details__input"
       id="gradeType"
-      type="string"
-      min="0"
-      max="100"
+      type="text"
       [(ngModel)]="grade.symbolicGrade"
       placeholder="Grade"
+      (keyup)="onKey()"
     />
   </div>
   <div class="field__container">
@@ -43,11 +45,10 @@
     <input
       class="details__input"
       id="gradeDescription"
-      type="string"
-      min="0"
-      max="100"
+      type="text"
       [(ngModel)]="grade.descriptiveGrade"
       placeholder="Grade description"
+      (keyup)="onKey()"
     />
   </div>
 </div>

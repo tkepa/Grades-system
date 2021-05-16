@@ -1,6 +1,9 @@
 <div class="container">
-  <app-panel-header class="header"></app-panel-header>
-  <app-panel-nav class="navigation"></app-panel-nav>
+  <div class="header"><app-panel-header></app-panel-header></div>
+  <nav class="navigation">
+    <app-panel-nav class="navigation__links"></app-panel-nav>
+  </nav>
+
   <div class="content">
     <router-outlet></router-outlet>
   </div>

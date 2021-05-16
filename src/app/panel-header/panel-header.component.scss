@@ -2,7 +2,6 @@ $green: #5e8837;
 
 .header {
   grid-area: header;
-  width: 100vw;
   height: 3.125rem;
   background-color: white;
   filter: drop-shadow(0.5rem -0.5rem 0.5rem rgb(0, 0, 0));
@@ -13,16 +12,22 @@ $green: #5e8837;
     display: flex;
     align-items: center;
     height: 3.125rem;
+
+    &--button {
+      width: 20%;
+      height: 3.125rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__item {
-    margin: 1rem;
-
     &--button {
       width: 3rem;
       height: 3rem;
       background-color: white;
-      margin: 0.5rem 1rem 0.5rem 1rem;
+
       padding: 0;
       border: none;
     }
