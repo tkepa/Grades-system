@@ -9,7 +9,7 @@ import { HeaderTitleService } from '../header-title.service';
   styleUrls: ['./panel-header.component.scss']
 })
 export class PanelHeaderComponent implements OnInit {
-  title: string = '';
+  title = '';
   buttonCondition: string;
 
   constructor(
